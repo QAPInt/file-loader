@@ -64,7 +64,7 @@ export default function loader(content) {
 
   if (options.publicPath) {
     if (typeof options.publicPath === 'function') {
-      publicPath = options.publicPath(url);
+      publicPath = options.publicPath(url, this._module.issuer.resource);
     } else if (options.publicPath.endsWith('/')) {
       publicPath = options.publicPath + url;
     } else {
